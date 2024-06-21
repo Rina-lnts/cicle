@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите сумму вклада: ");
+        decimal сумма_вклада = Convert.ToDecimal(Console.ReadLine());
+
+        Console.Write("Введите количество месяцев: ");
+        int количество_месяцев = Convert.ToInt32(Console.ReadLine());
+
+        decimal процент = 0.07m;
+        
+        for (int месяц = 1; месяц <= количество_месяцев; месяц++)
+        {
+            сумма_вклада += сумма_вклада * процент;
+        }
+        Console.WriteLine($"Итоговая сумма вклада через {количество_месяцев} месяцев: {Math.Round(сумма_вклада, 2)}");
+    }
+}
